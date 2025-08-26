@@ -1,6 +1,4 @@
-import Link from "next/link";
-
-const ServicesPage = () => {
+const ServicesDetailPage = ({ params }) => {
   const data = [
     {
       id: 1,
@@ -35,20 +33,16 @@ const ServicesPage = () => {
         "We create high-performance Android and iOS apps with seamless user experiences and cutting-edge technology.",
     },
   ];
+  const { id } = params;
+  const singleData = data.find((d) => d.id == id);
   return (
     <div>
-      <p className="font-bold text-3xl">Services Page</p>
-      {data.map((d) => {
-        return (
-          <div className="space-y-4">
-            <Link href={`/services/${d.id}`}>
-              <img className="w-20" src={d.service_img} alt="ii" />
-            </Link>
-          </div>
-        );
-      })}
+      <h1>ServicesDetailPage</h1>
+      <p>ID: {id}</p>
+      <p>{singleData.service_name}</p>
+      <img src={singleData.service_img} alt="img" />
     </div>
   );
 };
 
-export default ServicesPage;
+export default ServicesDetailPage;

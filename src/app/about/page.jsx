@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const AboutPage = () => {
   const router = useRouter();
-  const isLoggedIn = false;
+  const isLoggedIn = true;
   const handleNavigate = () => {
     if (isLoggedIn) {
       router.push("/about/address");
