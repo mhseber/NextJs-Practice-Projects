@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 export function middleware(request) {
 
     const dummyUserData = {
-        name: "user",
+        name: "admin",
         email: "good@gmail.com"
     }
     let isServicesPage = request.nextUrl.pathname.startsWith("/services")
